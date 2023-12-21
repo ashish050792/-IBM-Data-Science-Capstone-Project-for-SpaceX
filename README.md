@@ -71,4 +71,8 @@ Interactive dashboard development with Plotly Dash
 Interactive map development using Folium
 
 Using machine learning to build a predictive model to help a business function more efficiently
+
 Structuring and building a data-findings report
+
+
+![applied-data-science-capstone 1](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/49396f7a-41fa-4196-9e16-cb691de2d47c)
