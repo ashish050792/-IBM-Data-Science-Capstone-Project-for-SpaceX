@@ -1,5 +1,6 @@
 # -IBM-Data-Science-Capstone-Project-for-SpaceX
 Context and Business Understanding
+
 SpaceX launches Falcon 9 rockets at a cost of around $62m. This is considerably cheaper than other providers (which usually cost upwards of $165m), and much of the savings are because SpaceX can land, and then re-use the first stage of the rocket.
 
 If we can make predictions on whether the first stage will land, we can determine the cost of a launch, and use this information to assess whether or not an alternate company should bid against SpaceX for a rocket launch.
@@ -8,12 +9,17 @@ If we can make predictions on whether the first stage will land, we can determin
 This project follows these steps:
 
 ## Data Collection
+
 Making GET requests to the SpaceX REST API
+
 Web Scraping
 
 ## Data Wrangling
+
 Using the .fillna() method to remove NaN values
+
 Using the .value_counts() method to determine the following:
+
 Number of launches on each site
 Number and occurrence of each orbit
 Number and occurrence of mission outcome per orbit type
