@@ -7,18 +7,26 @@ SpaceX, a leader in the space industry, strives to make space travel affordable 
 ### Explore
 
 •	How payload mass, launch site, number of flights, and orbits affect first-stage landing success
+
 •	Rate of successful landings over time
+
 •	Best predictive model for successful landing (binary classification)
 
 ### Executive Summary
 
 The research attempts to identify the factors for a successful rocket landing. To make this determination, the following methodologies where used:
 •	Collect data using SpaceX REST API and web scraping techniques
+
 •	Wrangle data to create success/fail outcome variable
+
 •	Explore data with data visualization techniques, considering the following factors: payload, launch site, flight number and yearly trend
+
 •	Analyze the data with SQL, calculating the following statistics: total payload, payload range for successful launches, and total # of successful and failed outcomes
+
 •	Explore launch site success rates and proximity to geographical markers
+
 •	Visualize the launch sites with the most success and successful payload ranges
+
 •	Build Models to predict landing outcomes using logistic regression, support vector machine (SVM), decision tree and K-nearest neighbor (KNN)
 
 ### Results
@@ -26,13 +34,17 @@ The research attempts to identify the factors for a successful rocket landing. T
 ### Exploratory Data Analysis :
 
 •	Launch success has improved over time
+
 •	KSC LC-39A has the highest success rate among landing sites
+
 •	Orbits ES-L1, GEO, HEO, and SSO have a 100% success rate
 
 ### Visualization /Analytics :
+
 •	Most launch sites are near the equator, and all are close to the coast
 
 ### Predictive Analytics :
+
 •	All models performed similarly on the test set. The decision tree model slightly out performed when looking at .best_score_
 
 ## Methodology
@@ -58,11 +70,17 @@ The research attempts to identify the factors for a successful rocket landing. T
 ### Data Collection - Web Scraping
 
 •	Request data (Falcon 9 launch data) from Wikipedia
+
 •	Create BeautifulSoup object from HTML response
+
 •	Extract column names from HTML table header
+
 •	Collect data from parsing HTML tables
+
 •	Create dictionary from the data
+
 •	Create dataframe from the dictionary
+
 •	Export data to csv file
 
 ### Data Wrangling
@@ -72,33 +90,56 @@ The research attempts to identify the factors for a successful rocket landing. T
 ### EDA with Visualization and SQL
 
 •	Create charts to analyze relationships and show comparisons
+
 •	Query the data to understand more about the data
 
 ### Maps with Folium
 
 •	Create maps to visualize launch sites, view launch outcomes and see distance to proximities
 Dashboard with Plotly Dash
+
 •	Create dashboard
+
 •	Pie chart showing successful launches
+
 •	Scatter chart showing Payload Mass vs. Success Rate by Booster Version
 
 ### Predictive Analytics
 
 •	Create NumPy array from the Class column
+
 •	Standardize the data with StandardScaler. Fit and transform the data.
+
 •	Split the data using train_test_split
+
 •	Create a GridSearchCV object with cv=10 for parameter optimization
+
 •	Apply GridSearchCV on different algorithms: logistic regression (LogisticRegression()), support vector machine (SVC()), decision tree (DecisionTreeClassifier()), K-Nearest Neighbor (KNeighborsClassifier())
+
 •	Calculate accuracy on the test data using .score() for all models
+
 •	Assess the confusion matrix for all models
+
 •	Identify the best model using Jaccard_Score, F1_Score and Accuracy
 
 ### Conclusion
 
 •	Model Performance: The models performed similarly on the test set with the decision tree model slightly outperforming
+
 •	Equator: Most of the launch sites are near the equator for an additional natural boost - due to the rotational speed of earth - which helps save the cost of putting in extra fuel and boosters
+
 •	Coast: All the launch sites are close to the coast
+
 •	Launch Success: Increases over time
+
 •	KSC LC-39A: Has the highest success rate among launch sites. Has a 100% success rate for launches less than 5,500 kg
+
 •	Orbits: ES-L1, GEO, HEO, and SSO have a 100% success rate
+
 •	Payload Mass: Across all launch sites, the higher the payload mass (kg), the higher the success rate
+
+![ibm data science](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/7a5bee13-859d-41c6-8e10-c849704d67c3)
+
+![applied data science](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/19bf0ba0-4cc6-4805-9547-ba7533590c4b)
+
+![applied-data-science-capstone 1](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/e900a1a9-a73a-4603-acd1-8251bda44ca0)
