@@ -138,8 +138,12 @@ Dashboard with Plotly Dash
 
 •	Payload Mass: Across all launch sites, the higher the payload mass (kg), the higher the success rate
 
+
 ![ibm data science](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/7a5bee13-859d-41c6-8e10-c849704d67c3)
 
+
+
 ![applied data science](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/19bf0ba0-4cc6-4805-9547-ba7533590c4b)
+
 
 ![applied-data-science-capstone 1](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/e900a1a9-a73a-4603-acd1-8251bda44ca0)
