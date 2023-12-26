@@ -40,12 +40,19 @@ The research attempts to identify the factors for a successful rocket landing. T
 ### Data Collection - API
 
 •	Request data from SpaceX API (rocket launch data)
+
 •	Decode response using .json() and convert to a dataframe using .json_normalize()
+
 •	Request information about the launches from SpaceX API using custom functions
+
 •	Create dictionary from the data
+
 •	Create dataframe from the dictionary
+
 •	Filter dataframe to contain only Falcon 9 launches
+
 •	Replace missing values of Payload Mass with calculated .mean()
+
 •	Export data to csv file
 
 ### Data Collection - Web Scraping
