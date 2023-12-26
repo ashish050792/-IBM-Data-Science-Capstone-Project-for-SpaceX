@@ -1,80 +1,96 @@
-# -IBM-Data-Science-Capstone-Project-for-SpaceX
-## Context and Business Understanding
+###IBM Data Science Capstone SpaceX
 
-SpaceX launches Falcon 9 rockets at a cost of around $62m. This is considerably cheaper than other providers (which usually cost upwards of $165m), and much of the savings are because SpaceX can land, and then re-use the first stage of the rocket.
+##Background
 
-If we can make predictions on whether the first stage will land, we can determine the cost of a launch, and use this information to assess whether or not an alternate company should bid against SpaceX for a rocket launch.
+SpaceX, a leader in the space industry, strives to make space travel affordable for everyone. Its accomplishments include sending spacecraft to the international space station, launching a satellite constellation that provides internet access and sending manned missions to space. SpaceX can do this because the rocket launches are relatively inexpensive ($62 million per launch) due to its novel reuse of the first stage of its Falcon 9 rocket. Other providers, which are not able to reuse the first stage, cost upwards of $165 million each. By determining if the first stage will land, we can determine the price of the launch. To do this, we can use public data and machine learning models to predict whether SpaceX – or a competing company – can reuse the first stage.
 
-📑 Main Topics
-This project follows these steps:
+##Explore
 
-## Data Collection
+•	How payload mass, launch site, number of flights, and orbits affect first-stage landing success
+•	Rate of successful landings over time
+•	Best predictive model for successful landing (binary classification)
 
-Making GET requests to the SpaceX REST API
+##Executive Summary
 
-Web Scraping
+The research attempts to identify the factors for a successful rocket landing. To make this determination, the following methodologies where used:
+•	Collect data using SpaceX REST API and web scraping techniques
+•	Wrangle data to create success/fail outcome variable
+•	Explore data with data visualization techniques, considering the following factors: payload, launch site, flight number and yearly trend
+•	Analyze the data with SQL, calculating the following statistics: total payload, payload range for successful launches, and total # of successful and failed outcomes
+•	Explore launch site success rates and proximity to geographical markers
+•	Visualize the launch sites with the most success and successful payload ranges
+•	Build Models to predict landing outcomes using logistic regression, support vector machine (SVM), decision tree and K-nearest neighbor (KNN)
 
-## Data Wrangling
+##Results
 
-Using the .fillna() method to remove NaN values
+##Exploratory Data Analysis :
 
-Using the .value_counts() method to determine the following:
+•	Launch success has improved over time
+•	KSC LC-39A has the highest success rate among landing sites
+•	Orbits ES-L1, GEO, HEO, and SSO have a 100% success rate
 
-Number of launches on each site
+##Visualization /Analytics :
+•	Most launch sites are near the equator, and all are close to the coast
 
-Number and occurrence of each orbit
+##Predictive Analytics :
+•	All models performed similarly on the test set. The decision tree model slightly out performed when looking at .best_score_
 
-Number and occurrence of mission outcome per orbit type
+##Methodology
 
-Creating a landing outcome label that shows the following:
+##Data Collection - API
 
-0- when the booster did not land successfully
+•	Request data from SpaceX API (rocket launch data)
+•	Decode response using .json() and convert to a dataframe using .json_normalize()
+•	Request information about the launches from SpaceX API using custom functions
+•	Create dictionary from the data
+•	Create dataframe from the dictionary
+•	Filter dataframe to contain only Falcon 9 launches
+•	Replace missing values of Payload Mass with calculated .mean()
+•	Export data to csv file
 
-1- when the booster did land successfully
+##Data Collection - Web Scraping
+•	Request data (Falcon 9 launch data) from Wikipedia
+•	Create BeautifulSoup object from HTML response
+•	Extract column names from HTML table header
+•	Collect data from parsing HTML tables
+•	Create dictionary from the data
+•	Create dataframe from the dictionary
+•	Export data to csv file
 
-## Exploratory Data Analysis
+##Data Wrangling
 
-Using SQL queries to manipulate and evaluate the SpaceX dataset
+•	Convert outcomes into 1 for a successful landing and 0 for an unsuccessful landing
 
-Using Pandas and Matplotlib to visualize relationships between variables, and determine patterns
+##EDA with Visualization and SQL
 
-Interactive Visual Analytics
+•	Create charts to analyze relationships and show comparisons
+•	Query the data to understand more about the data
 
-Geospatial analytics using Folium
+##Maps with Folium
 
-Creating an interactive dashboard using Plotly Dash
+•	Create maps to visualize launch sites, view launch outcomes and see distance to proximities
+Dashboard with Plotly Dash
+•	Create dashboard
+•	Pie chart showing successful launches
+•	Scatter chart showing Payload Mass vs. Success Rate by Booster Version
 
-## Predictive Analysis (Classification)
+##Predictive Analytics
 
-Using Scikit-Learn to:
+•	Create NumPy array from the Class column
+•	Standardize the data with StandardScaler. Fit and transform the data.
+•	Split the data using train_test_split
+•	Create a GridSearchCV object with cv=10 for parameter optimization
+•	Apply GridSearchCV on different algorithms: logistic regression (LogisticRegression()), support vector machine (SVC()), decision tree (DecisionTreeClassifier()), K-Nearest Neighbor (KNeighborsClassifier())
+•	Calculate accuracy on the test data using .score() for all models
+•	Assess the confusion matrix for all models
+•	Identify the best model using Jaccard_Score, F1_Score and Accuracy
 
-Pre-process (standardize) the data
+##Conclusion
 
-Split the data into training and testing data using train_test_split
-
-Train different classification models
-
-Find hyperparameters using GridSearchCV
-
-Plotting confusion matrices for each classification model
-
-Assessing the accuracy of each classification model
-
-## 🔑 Key Skills Learned/Used
-
-Using data science methodologies to define and formulate a real-world business problem
-
-Using data analysis and data visualisation to load a dataset, clean it, and find out interesting insights from it
-
-Interactive dashboard development with Plotly Dash
-
-Interactive map development using Folium
-
-Using machine learning to build a predictive model to help a business function more efficiently
-
-Structuring and building a data-findings report
-
-![applied data science](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/99d05daf-222b-4ffd-94ef-00580576f71e)
-
-
-![applied-data-science-capstone 1](https://github.com/ashish050792/-IBM-Data-Science-Capstone-Project-for-SpaceX/assets/147066800/49396f7a-41fa-4196-9e16-cb691de2d47c)
+•	Model Performance: The models performed similarly on the test set with the decision tree model slightly outperforming
+•	Equator: Most of the launch sites are near the equator for an additional natural boost - due to the rotational speed of earth - which helps save the cost of putting in extra fuel and boosters
+•	Coast: All the launch sites are close to the coast
+•	Launch Success: Increases over time
+•	KSC LC-39A: Has the highest success rate among launch sites. Has a 100% success rate for launches less than 5,500 kg
+•	Orbits: ES-L1, GEO, HEO, and SSO have a 100% success rate
+•	Payload Mass: Across all launch sites, the higher the payload mass (kg), the higher the success rate
