@@ -1,16 +1,16 @@
-###IBM Data Science Capstone SpaceX
+### IBM Data Science Capstone SpaceX
 
-##Background
+## Background
 
 SpaceX, a leader in the space industry, strives to make space travel affordable for everyone. Its accomplishments include sending spacecraft to the international space station, launching a satellite constellation that provides internet access and sending manned missions to space. SpaceX can do this because the rocket launches are relatively inexpensive ($62 million per launch) due to its novel reuse of the first stage of its Falcon 9 rocket. Other providers, which are not able to reuse the first stage, cost upwards of $165 million each. By determining if the first stage will land, we can determine the price of the launch. To do this, we can use public data and machine learning models to predict whether SpaceX – or a competing company – can reuse the first stage.
 
-##Explore
+## Explore
 
 •	How payload mass, launch site, number of flights, and orbits affect first-stage landing success
 •	Rate of successful landings over time
 •	Best predictive model for successful landing (binary classification)
 
-##Executive Summary
+## Executive Summary
 
 The research attempts to identify the factors for a successful rocket landing. To make this determination, the following methodologies where used:
 •	Collect data using SpaceX REST API and web scraping techniques
@@ -21,23 +21,23 @@ The research attempts to identify the factors for a successful rocket landing. T
 •	Visualize the launch sites with the most success and successful payload ranges
 •	Build Models to predict landing outcomes using logistic regression, support vector machine (SVM), decision tree and K-nearest neighbor (KNN)
 
-##Results
+## Results
 
-##Exploratory Data Analysis :
+## Exploratory Data Analysis :
 
 •	Launch success has improved over time
 •	KSC LC-39A has the highest success rate among landing sites
 •	Orbits ES-L1, GEO, HEO, and SSO have a 100% success rate
 
-##Visualization /Analytics :
+## Visualization /Analytics :
 •	Most launch sites are near the equator, and all are close to the coast
 
-##Predictive Analytics :
+## Predictive Analytics :
 •	All models performed similarly on the test set. The decision tree model slightly out performed when looking at .best_score_
 
-##Methodology
+### Methodology
 
-##Data Collection - API
+## Data Collection - API
 
 •	Request data from SpaceX API (rocket launch data)
 •	Decode response using .json() and convert to a dataframe using .json_normalize()
@@ -48,7 +48,7 @@ The research attempts to identify the factors for a successful rocket landing. T
 •	Replace missing values of Payload Mass with calculated .mean()
 •	Export data to csv file
 
-##Data Collection - Web Scraping
+## Data Collection - Web Scraping
 •	Request data (Falcon 9 launch data) from Wikipedia
 •	Create BeautifulSoup object from HTML response
 •	Extract column names from HTML table header
@@ -57,16 +57,16 @@ The research attempts to identify the factors for a successful rocket landing. T
 •	Create dataframe from the dictionary
 •	Export data to csv file
 
-##Data Wrangling
+## Data Wrangling
 
 •	Convert outcomes into 1 for a successful landing and 0 for an unsuccessful landing
 
-##EDA with Visualization and SQL
+## EDA with Visualization and SQL
 
 •	Create charts to analyze relationships and show comparisons
 •	Query the data to understand more about the data
 
-##Maps with Folium
+## Maps with Folium
 
 •	Create maps to visualize launch sites, view launch outcomes and see distance to proximities
 Dashboard with Plotly Dash
@@ -74,7 +74,7 @@ Dashboard with Plotly Dash
 •	Pie chart showing successful launches
 •	Scatter chart showing Payload Mass vs. Success Rate by Booster Version
 
-##Predictive Analytics
+## Predictive Analytics
 
 •	Create NumPy array from the Class column
 •	Standardize the data with StandardScaler. Fit and transform the data.
@@ -85,7 +85,7 @@ Dashboard with Plotly Dash
 •	Assess the confusion matrix for all models
 •	Identify the best model using Jaccard_Score, F1_Score and Accuracy
 
-##Conclusion
+## Conclusion
 
 •	Model Performance: The models performed similarly on the test set with the decision tree model slightly outperforming
 •	Equator: Most of the launch sites are near the equator for an additional natural boost - due to the rotational speed of earth - which helps save the cost of putting in extra fuel and boosters
